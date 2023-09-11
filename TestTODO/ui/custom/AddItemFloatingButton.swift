@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct AddItemFloatingButton: View {
-    let onClick: () ->
+    let onClick: () -> ()
     
     var body: some View {
         Button {
@@ -26,6 +26,6 @@ struct AddItemFloatingButton: View {
 
 struct AddItemFloatingButton_Previews: PreviewProvider {
     static var previews: some View {
-        AddItemFloatingButton()
+        AddItemFloatingButton(onClick: {})
     }
 }

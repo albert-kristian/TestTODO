@@ -8,37 +8,27 @@
 import SwiftUI
 
 struct TodoView: View {
-    var body: some View {
-        ZStack(alignment: .bottomTrailing) {
-            ScrollView(showsIndicators: false) {
-                VStack(alignment: .leading, spacing: 8) {
-                    ForEach((0...100), id: \.self) { i in
-                        TodoItemView(title: "Title: \(i)", content: getContentText(index: i))
-                            .clipShape(RoundedRectangle(cornerSize: CGSize(width: 20, height:0)))
-                            .padding(.horizontal, 8)
-                    }
-                }
-            }
-            AddItemFloatingButton()
-        }
-    }
+    @StateObject private var viewModel: TodoViewModel = TodoViewModel()
     
-    private func getContentText(index i: Int) -> String {
-        if (i % 2 == 0) {
-            return "Some super long text that does not fit in one line and has to use more we need it to test how does the card collapse and expand and some more text to properly test it"
-        }
-        return "Title: \(i)"
+    var body: some View {
+        List {
+            ForEach(viewModel.dummyData, id: \.id) { item in
+                TodoItem(todoModel: item)
+            }.onDelete(perform: { index in
+                viewModel.delete(at: index)
+            })
+            .onTapGesture {
+                
+            }
+        }.listStyle(.plain)
     }
 }
-//# if DEBUG
 
 struct TodoView_Previews: PreviewProvider {
     static var previews: some View {
         TodoView()
     }
 }
-
-//# endif
 
 private struct TodoItemView: View {
 

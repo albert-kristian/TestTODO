@@ -15,6 +15,8 @@
 		4258A8C52A9F85B800A77983 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4258A8C42A9F85B800A77983 /* Preview Assets.xcassets */; };
 		4258A8CD2A9F895300A77983 /* TodoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4258A8CC2A9F895300A77983 /* TodoView.swift */; };
 		42B173DE2AA4EAA800795BD7 /* TodoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42B173DD2AA4EAA800795BD7 /* TodoViewModel.swift */; };
+		42BB0A492AAF720A00663C6C /* TodoItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42BB0A482AAF720A00663C6C /* TodoItemView.swift */; };
+		42BB0A4B2AAF77BA00663C6C /* CheckBoxComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42BB0A4A2AAF77BA00663C6C /* CheckBoxComponent.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +29,8 @@
 		4258A8C42A9F85B800A77983 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		4258A8CC2A9F895300A77983 /* TodoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoView.swift; sourceTree = "<group>"; };
 		42B173DD2AA4EAA800795BD7 /* TodoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoViewModel.swift; sourceTree = "<group>"; };
+		42BB0A482AAF720A00663C6C /* TodoItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoItemView.swift; sourceTree = "<group>"; };
+		42BB0A4A2AAF77BA00663C6C /* CheckBoxComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckBoxComponent.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,7 +55,7 @@
 		4218F3BD2AA3504000A24124 /* views */ = {
 			isa = PBXGroup;
 			children = (
-				4258A8CC2A9F895300A77983 /* TodoView.swift */,
+				42BB0A462AAF71C300663C6C /* todoView */,
 			);
 			path = views;
 			sourceTree = "<group>";
@@ -60,6 +64,7 @@
 			isa = PBXGroup;
 			children = (
 				4218F3BF2AA3506700A24124 /* AddItemFloatingButton.swift */,
+				42BB0A4A2AAF77BA00663C6C /* CheckBoxComponent.swift */,
 			);
 			path = custom;
 			sourceTree = "<group>";
@@ -125,6 +130,23 @@
 				4218F3BD2AA3504000A24124 /* views */,
 			);
 			path = ui;
+			sourceTree = "<group>";
+		};
+		42BB0A462AAF71C300663C6C /* todoView */ = {
+			isa = PBXGroup;
+			children = (
+				42BB0A472AAF71D200663C6C /* components */,
+				4258A8CC2A9F895300A77983 /* TodoView.swift */,
+			);
+			path = todoView;
+			sourceTree = "<group>";
+		};
+		42BB0A472AAF71D200663C6C /* components */ = {
+			isa = PBXGroup;
+			children = (
+				42BB0A482AAF720A00663C6C /* TodoItemView.swift */,
+			);
+			path = components;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -197,9 +219,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				42BB0A492AAF720A00663C6C /* TodoItemView.swift in Sources */,
 				42B173DE2AA4EAA800795BD7 /* TodoViewModel.swift in Sources */,
 				4258A8CD2A9F895300A77983 /* TodoView.swift in Sources */,
 				4218F3C42AA38E1100A24124 /* RealmTodoModel.swift in Sources */,
+				42BB0A4B2AAF77BA00663C6C /* CheckBoxComponent.swift in Sources */,
 				4218F3C02AA3506700A24124 /* AddItemFloatingButton.swift in Sources */,
 				4218F3C72AA38E8A00A24124 /* TodoModel.swift in Sources */,
 				4258A8BE2A9F85B600A77983 /* TestTodoApp.swift in Sources */,
@@ -395,7 +419,7 @@
 				4258A8C72A9F85B800A77983 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 		4258A8C82A9F85B800A77983 /* Build configuration list for PBXNativeTarget "TestTODO" */ = {
 			isa = XCConfigurationList;
@@ -404,7 +428,7 @@
 				4258A8CA2A9F85B800A77983 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 /* End XCConfigurationList section */
 	};
