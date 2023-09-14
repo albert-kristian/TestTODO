@@ -11,7 +11,7 @@ import SwiftUI
 struct TestTODOApp: App {
     var body: some Scene {
         WindowGroup {
-            TodoView()
+            MainView()
         }
     }
 }
