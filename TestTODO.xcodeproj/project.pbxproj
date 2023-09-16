@@ -102,8 +102,8 @@
 			children = (
 				4258A8BD2A9F85B600A77983 /* TestTodoApp.swift */,
 				4258A8CB2A9F891600A77983 /* UI */,
-				4218F3C22AA357C000A24124 /* Models */,
 				4218F3BB2AA34FCF00A24124 /* ViewModels */,
+				4218F3C22AA357C000A24124 /* Models */,
 				4258A8C12A9F85B800A77983 /* Assets.xcassets */,
 				4258A8C32A9F85B800A77983 /* Preview Content */,
 			);
