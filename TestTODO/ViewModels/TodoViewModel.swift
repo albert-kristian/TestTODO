@@ -24,16 +24,6 @@ extension TodoView {
         func check(id: String) {
             let index = dummyData.firstIndex(where: { $0.id == id })
             dummyData[index!].modify(isChecked: !dummyData[index!].isChecked)
-            
-//            dummyData = dummyData.map({ model in
-//                if (model.id == id) {
-//                    var tempModel = model
-//                    tempModel.modify(isChecked: !model.isChecked)
-//                    return tempModel
-//                } else {
-//                    return model
-//                }
-//            })
         }
     }
 }

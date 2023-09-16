@@ -19,7 +19,7 @@ struct MainView: View {
                 }
             }
             AddItemButton(onClick: {
-                
+                //TODO: Implement navigation to AddItemScreen
             })
         }
     }
