@@ -8,15 +8,13 @@
 import SwiftUI
 
 struct TodoItem: View {
-    @State var todoModel: any TodoModel
+    let todoModel: any TodoModel
     
     var body: some View {
         HStack {
             Text(todoModel.content)
             Spacer()
-            CheckBoxComponent(isChecked: todoModel.isChecked, onCheck: { newValue in
-                todoModel.isChecked = newValue
-            })
+            CheckBoxComponent(isChecked: todoModel.isChecked)
         }
         .frame(maxWidth: .infinity)
         .padding(.all, 24)

@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4218F3C02AA3506700A24124 /* AddItemFloatingButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4218F3BF2AA3506700A24124 /* AddItemFloatingButton.swift */; };
+		4218F3C02AA3506700A24124 /* AddItemButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4218F3BF2AA3506700A24124 /* AddItemButton.swift */; };
 		4218F3C42AA38E1100A24124 /* RealmTodoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4218F3C32AA38E1100A24124 /* RealmTodoModel.swift */; };
 		4218F3C72AA38E8A00A24124 /* TodoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4218F3C62AA38E8A00A24124 /* TodoModel.swift */; };
 		4258A8BE2A9F85B600A77983 /* TestTodoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4258A8BD2A9F85B600A77983 /* TestTodoApp.swift */; };
@@ -17,10 +17,11 @@
 		42B173DE2AA4EAA800795BD7 /* TodoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42B173DD2AA4EAA800795BD7 /* TodoViewModel.swift */; };
 		42BB0A492AAF720A00663C6C /* TodoItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42BB0A482AAF720A00663C6C /* TodoItemView.swift */; };
 		42BB0A4B2AAF77BA00663C6C /* CheckBoxComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42BB0A4A2AAF77BA00663C6C /* CheckBoxComponent.swift */; };
+		42BB0A4D2AAF8FB100663C6C /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42BB0A4C2AAF8FB100663C6C /* MainView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		4218F3BF2AA3506700A24124 /* AddItemFloatingButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddItemFloatingButton.swift; sourceTree = "<group>"; };
+		4218F3BF2AA3506700A24124 /* AddItemButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddItemButton.swift; sourceTree = "<group>"; };
 		4218F3C32AA38E1100A24124 /* RealmTodoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmTodoModel.swift; sourceTree = "<group>"; };
 		4218F3C62AA38E8A00A24124 /* TodoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoModel.swift; sourceTree = "<group>"; };
 		4258A8BA2A9F85B600A77983 /* TestTODO.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestTODO.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -31,6 +32,7 @@
 		42B173DD2AA4EAA800795BD7 /* TodoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoViewModel.swift; sourceTree = "<group>"; };
 		42BB0A482AAF720A00663C6C /* TodoItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoItemView.swift; sourceTree = "<group>"; };
 		42BB0A4A2AAF77BA00663C6C /* CheckBoxComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckBoxComponent.swift; sourceTree = "<group>"; };
+		42BB0A4C2AAF8FB100663C6C /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -44,46 +46,39 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		4218F3BB2AA34FCF00A24124 /* viewModels */ = {
+		4218F3BB2AA34FCF00A24124 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
 				42B173DD2AA4EAA800795BD7 /* TodoViewModel.swift */,
 			);
-			path = viewModels;
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
-		4218F3BD2AA3504000A24124 /* views */ = {
+		4218F3BD2AA3504000A24124 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				42BB0A462AAF71C300663C6C /* todoView */,
+				42BB0A462AAF71C300663C6C /* TodoView */,
+				42BB0A4C2AAF8FB100663C6C /* MainView.swift */,
 			);
-			path = views;
+			path = Views;
 			sourceTree = "<group>";
 		};
-		4218F3BE2AA3504D00A24124 /* custom */ = {
+		4218F3BE2AA3504D00A24124 /* Custom */ = {
 			isa = PBXGroup;
 			children = (
-				4218F3BF2AA3506700A24124 /* AddItemFloatingButton.swift */,
+				4218F3BF2AA3506700A24124 /* AddItemButton.swift */,
 				42BB0A4A2AAF77BA00663C6C /* CheckBoxComponent.swift */,
 			);
-			path = custom;
+			path = Custom;
 			sourceTree = "<group>";
 		};
-		4218F3C12AA357BA00A24124 /* data */ = {
-			isa = PBXGroup;
-			children = (
-				4218F3C22AA357C000A24124 /* models */,
-			);
-			path = data;
-			sourceTree = "<group>";
-		};
-		4218F3C22AA357C000A24124 /* models */ = {
+		4218F3C22AA357C000A24124 /* Models */ = {
 			isa = PBXGroup;
 			children = (
 				4218F3C32AA38E1100A24124 /* RealmTodoModel.swift */,
 				4218F3C62AA38E8A00A24124 /* TodoModel.swift */,
 			);
-			path = models;
+			path = Models;
 			sourceTree = "<group>";
 		};
 		4258A8B12A9F85B600A77983 = {
@@ -105,10 +100,10 @@
 		4258A8BC2A9F85B600A77983 /* TestTODO */ = {
 			isa = PBXGroup;
 			children = (
-				4218F3C12AA357BA00A24124 /* data */,
-				4218F3BB2AA34FCF00A24124 /* viewModels */,
-				4258A8CB2A9F891600A77983 /* ui */,
 				4258A8BD2A9F85B600A77983 /* TestTodoApp.swift */,
+				4258A8CB2A9F891600A77983 /* UI */,
+				4218F3BB2AA34FCF00A24124 /* ViewModels */,
+				4218F3C22AA357C000A24124 /* Models */,
 				4258A8C12A9F85B800A77983 /* Assets.xcassets */,
 				4258A8C32A9F85B800A77983 /* Preview Content */,
 			);
@@ -123,30 +118,30 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		4258A8CB2A9F891600A77983 /* ui */ = {
+		4258A8CB2A9F891600A77983 /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				4218F3BE2AA3504D00A24124 /* custom */,
-				4218F3BD2AA3504000A24124 /* views */,
+				4218F3BE2AA3504D00A24124 /* Custom */,
+				4218F3BD2AA3504000A24124 /* Views */,
 			);
-			path = ui;
+			path = UI;
 			sourceTree = "<group>";
 		};
-		42BB0A462AAF71C300663C6C /* todoView */ = {
+		42BB0A462AAF71C300663C6C /* TodoView */ = {
 			isa = PBXGroup;
 			children = (
-				42BB0A472AAF71D200663C6C /* components */,
+				42BB0A472AAF71D200663C6C /* Components */,
 				4258A8CC2A9F895300A77983 /* TodoView.swift */,
 			);
-			path = todoView;
+			path = TodoView;
 			sourceTree = "<group>";
 		};
-		42BB0A472AAF71D200663C6C /* components */ = {
+		42BB0A472AAF71D200663C6C /* Components */ = {
 			isa = PBXGroup;
 			children = (
 				42BB0A482AAF720A00663C6C /* TodoItemView.swift */,
 			);
-			path = components;
+			path = Components;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -220,11 +215,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				42BB0A492AAF720A00663C6C /* TodoItemView.swift in Sources */,
+				42BB0A4D2AAF8FB100663C6C /* MainView.swift in Sources */,
 				42B173DE2AA4EAA800795BD7 /* TodoViewModel.swift in Sources */,
 				4258A8CD2A9F895300A77983 /* TodoView.swift in Sources */,
 				4218F3C42AA38E1100A24124 /* RealmTodoModel.swift in Sources */,
 				42BB0A4B2AAF77BA00663C6C /* CheckBoxComponent.swift in Sources */,
-				4218F3C02AA3506700A24124 /* AddItemFloatingButton.swift in Sources */,
+				4218F3C02AA3506700A24124 /* AddItemButton.swift in Sources */,
 				4218F3C72AA38E8A00A24124 /* TodoModel.swift in Sources */,
 				4258A8BE2A9F85B600A77983 /* TestTodoApp.swift in Sources */,
 			);

@@ -7,25 +7,25 @@
 
 import SwiftUI
 
-struct AddItemFloatingButton: View {
+struct AddItemButton: View {
     let onClick: () -> ()
     
     var body: some View {
         Button {
-            
+            onClick()
         } label: { Image(systemName: "plus")
                 .font(.title.weight(.semibold))
                 .padding()
-                .background(Color.yellow.grayscale(0.2))
+                .background(Color.blue.grayscale(0.1))
                 .foregroundColor(.white)
                 .clipShape(Circle())
                 .shadow(radius: 4, x: 0, y: 4)
-        }.padding(24)
+        }.padding(16)
     }
 }
 
-struct AddItemFloatingButton_Previews: PreviewProvider {
+struct AddItemButton_Previews: PreviewProvider {
     static var previews: some View {
-        AddItemFloatingButton(onClick: {})
+        AddItemButton(onClick: {})
     }
 }
