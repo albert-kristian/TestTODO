@@ -14,10 +14,16 @@
 		4258A8C22A9F85B800A77983 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4258A8C12A9F85B800A77983 /* Assets.xcassets */; };
 		4258A8C52A9F85B800A77983 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4258A8C42A9F85B800A77983 /* Preview Assets.xcassets */; };
 		4258A8CD2A9F895300A77983 /* TodoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4258A8CC2A9F895300A77983 /* TodoView.swift */; };
+		429D962D2AB613C50063C107 /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 429D962C2AB613C50063C107 /* CalendarView.swift */; };
+		429D96302AB6158E0063C107 /* CalendarComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 429D962F2AB6158E0063C107 /* CalendarComponent.swift */; };
+		429D96322AB73F090063C107 /* DayItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 429D96312AB73F090063C107 /* DayItemModel.swift */; };
+		429D96352AB7465C0063C107 /* DateExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 429D96342AB7465C0063C107 /* DateExtensions.swift */; };
+		429D96372AB9F1680063C107 /* CalendarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 429D96362AB9F1680063C107 /* CalendarViewModel.swift */; };
 		42B173DE2AA4EAA800795BD7 /* TodoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42B173DD2AA4EAA800795BD7 /* TodoViewModel.swift */; };
-		42BB0A492AAF720A00663C6C /* TodoItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42BB0A482AAF720A00663C6C /* TodoItemView.swift */; };
+		42BB0A492AAF720A00663C6C /* TodoItemComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42BB0A482AAF720A00663C6C /* TodoItemComponent.swift */; };
 		42BB0A4B2AAF77BA00663C6C /* CheckBoxComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42BB0A4A2AAF77BA00663C6C /* CheckBoxComponent.swift */; };
 		42BB0A4D2AAF8FB100663C6C /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42BB0A4C2AAF8FB100663C6C /* MainView.swift */; };
+		42BB7C802ABB68B600A57A7E /* DayComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42BB7C7F2ABB68B600A57A7E /* DayComponent.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,10 +35,16 @@
 		4258A8C12A9F85B800A77983 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4258A8C42A9F85B800A77983 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		4258A8CC2A9F895300A77983 /* TodoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoView.swift; sourceTree = "<group>"; };
+		429D962C2AB613C50063C107 /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
+		429D962F2AB6158E0063C107 /* CalendarComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarComponent.swift; sourceTree = "<group>"; };
+		429D96312AB73F090063C107 /* DayItemModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayItemModel.swift; sourceTree = "<group>"; };
+		429D96342AB7465C0063C107 /* DateExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtensions.swift; sourceTree = "<group>"; };
+		429D96362AB9F1680063C107 /* CalendarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewModel.swift; sourceTree = "<group>"; };
 		42B173DD2AA4EAA800795BD7 /* TodoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoViewModel.swift; sourceTree = "<group>"; };
-		42BB0A482AAF720A00663C6C /* TodoItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoItemView.swift; sourceTree = "<group>"; };
+		42BB0A482AAF720A00663C6C /* TodoItemComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoItemComponent.swift; sourceTree = "<group>"; };
 		42BB0A4A2AAF77BA00663C6C /* CheckBoxComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckBoxComponent.swift; sourceTree = "<group>"; };
 		42BB0A4C2AAF8FB100663C6C /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		42BB7C7F2ABB68B600A57A7E /* DayComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayComponent.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,6 +62,7 @@
 			isa = PBXGroup;
 			children = (
 				42B173DD2AA4EAA800795BD7 /* TodoViewModel.swift */,
+				429D96362AB9F1680063C107 /* CalendarViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -58,6 +71,7 @@
 			isa = PBXGroup;
 			children = (
 				42BB0A462AAF71C300663C6C /* TodoView */,
+				429D962B2AB6139F0063C107 /* CalendarView */,
 				42BB0A4C2AAF8FB100663C6C /* MainView.swift */,
 			);
 			path = Views;
@@ -77,6 +91,7 @@
 			children = (
 				4218F3C32AA38E1100A24124 /* RealmTodoModel.swift */,
 				4218F3C62AA38E8A00A24124 /* TodoModel.swift */,
+				429D96312AB73F090063C107 /* DayItemModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -104,6 +119,7 @@
 				4258A8CB2A9F891600A77983 /* UI */,
 				4218F3BB2AA34FCF00A24124 /* ViewModels */,
 				4218F3C22AA357C000A24124 /* Models */,
+				429D96332AB746410063C107 /* Extensions */,
 				4258A8C12A9F85B800A77983 /* Assets.xcassets */,
 				4258A8C32A9F85B800A77983 /* Preview Content */,
 			);
@@ -127,11 +143,37 @@
 			path = UI;
 			sourceTree = "<group>";
 		};
+		429D962B2AB6139F0063C107 /* CalendarView */ = {
+			isa = PBXGroup;
+			children = (
+				429D962C2AB613C50063C107 /* CalendarView.swift */,
+				429D962E2AB615610063C107 /* Components */,
+			);
+			path = CalendarView;
+			sourceTree = "<group>";
+		};
+		429D962E2AB615610063C107 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				429D962F2AB6158E0063C107 /* CalendarComponent.swift */,
+				42BB7C7F2ABB68B600A57A7E /* DayComponent.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		429D96332AB746410063C107 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				429D96342AB7465C0063C107 /* DateExtensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		42BB0A462AAF71C300663C6C /* TodoView */ = {
 			isa = PBXGroup;
 			children = (
-				42BB0A472AAF71D200663C6C /* Components */,
 				4258A8CC2A9F895300A77983 /* TodoView.swift */,
+				42BB0A472AAF71D200663C6C /* Components */,
 			);
 			path = TodoView;
 			sourceTree = "<group>";
@@ -139,7 +181,7 @@
 		42BB0A472AAF71D200663C6C /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				42BB0A482AAF720A00663C6C /* TodoItemView.swift */,
+				42BB0A482AAF720A00663C6C /* TodoItemComponent.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -154,6 +196,7 @@
 				4258A8B62A9F85B600A77983 /* Sources */,
 				4258A8B72A9F85B600A77983 /* Frameworks */,
 				4258A8B82A9F85B600A77983 /* Resources */,
+				429D96382AB9F4F70063C107 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -209,20 +252,46 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		429D96382AB9F4F70063C107 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nif which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"error: SwiftLint does not exist, download it from https://github.com/realm/SwiftLint\"\n  exit 1\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		4258A8B62A9F85B600A77983 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				42BB0A492AAF720A00663C6C /* TodoItemView.swift in Sources */,
+				429D962D2AB613C50063C107 /* CalendarView.swift in Sources */,
+				42BB0A492AAF720A00663C6C /* TodoItemComponent.swift in Sources */,
+				42BB7C802ABB68B600A57A7E /* DayComponent.swift in Sources */,
 				42BB0A4D2AAF8FB100663C6C /* MainView.swift in Sources */,
+				429D96322AB73F090063C107 /* DayItemModel.swift in Sources */,
 				42B173DE2AA4EAA800795BD7 /* TodoViewModel.swift in Sources */,
 				4258A8CD2A9F895300A77983 /* TodoView.swift in Sources */,
+				429D96372AB9F1680063C107 /* CalendarViewModel.swift in Sources */,
 				4218F3C42AA38E1100A24124 /* RealmTodoModel.swift in Sources */,
 				42BB0A4B2AAF77BA00663C6C /* CheckBoxComponent.swift in Sources */,
 				4218F3C02AA3506700A24124 /* AddItemButton.swift in Sources */,
 				4218F3C72AA38E8A00A24124 /* TodoModel.swift in Sources */,
 				4258A8BE2A9F85B600A77983 /* TestTodoApp.swift in Sources */,
+				429D96302AB6158E0063C107 /* CalendarComponent.swift in Sources */,
+				429D96352AB7465C0063C107 /* DateExtensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

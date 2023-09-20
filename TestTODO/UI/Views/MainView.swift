@@ -8,18 +8,19 @@
 import SwiftUI
 
 struct MainView: View {
+
     var body: some View {
         ZStack(alignment: .bottom) {
             TabView {
                 TodoView().tabItem {
                     Label("Today", systemImage: "calendar.day.timeline.left")
                 }
-                Text("TODO").tabItem {
+                CalendarView().tabItem {
                     Label("Calendar", systemImage: "calendar")
                 }
             }
             AddItemButton(onClick: {
-                //TODO: Implement navigation to AddItemScreen
+                // TODO: Implement navigation to AddItemScreen
             })
         }
     }

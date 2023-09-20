@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct AddItemButton: View {
-    let onClick: () -> ()
-    
+    let onClick: () -> Void
+
     var body: some View {
         Button {
             onClick()
