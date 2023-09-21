@@ -14,21 +14,21 @@ struct DayComponent: View {
     var body: some View {
         VStack {
             if dayItem.day != -1 {
-                    ZStack(alignment: .topTrailing) {
-                        Text("\(dayItem.day)")
-                            .font(.title3.bold())
-                            .foregroundColor(foregroundColor)
-                            .frame(maxWidth: .infinity)
-                        if dayItem.badge != nil {
-                            ZStack(alignment: .center) {
-                                Circle().fill(dayItem.badge!.color)
-                                Text("\(dayItem.badge!.count)")
-                                    .foregroundColor(Color.white)
-                                    .font(.caption)
-                            }
-                            .offset(x: 2, y: -12)
-                            .frame(width: 20, height: 20)
+                ZStack(alignment: .topTrailing) {
+                    Text("\(dayItem.day)")
+                        .font(.title3.bold())
+                        .foregroundColor(foregroundColor)
+                        .frame(maxWidth: .infinity)
+                    if dayItem.badge != nil {
+                        ZStack(alignment: .center) {
+                            Circle().fill(dayItem.badge!.color)
+                            Text("\(dayItem.badge!.count)")
+                                .foregroundColor(Color.white)
+                                .font(.caption)
                         }
+                        .offset(x: 2, y: -12)
+                        .frame(width: 20, height: 20)
+                    }
                 }
             }
         }

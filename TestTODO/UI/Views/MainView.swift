@@ -8,14 +8,16 @@
 import SwiftUI
 
 struct MainView: View {
-
+    
+    @StateObject var dataProvider: DataProvider = DataProviderImpl()
+    
     var body: some View {
         ZStack(alignment: .bottom) {
             TabView {
-                TodoView().tabItem {
+                TodoView(viewModel: TodoViewModel(dataProvider: dataProvider)).tabItem {
                     Label("Today", systemImage: "calendar.day.timeline.left")
                 }
-                CalendarView().tabItem {
+                CalendarView(viewModel: CalendarViewModel(dataProvider: dataProvider)).tabItem {
                     Label("Calendar", systemImage: "calendar")
                 }
             }

@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct CalendarView: View {
-    @StateObject private var viewModel = CalendarViewModel()
-
+    @ObservedObject var viewModel: CalendarViewModel
+    
     var body: some View {
         VStack {
             CalendarComponent(
@@ -29,6 +29,8 @@ struct CalendarView: View {
 
 struct CalendarView_Previews: PreviewProvider {
     static var previews: some View {
-        CalendarView()
+        CalendarView(
+            viewModel: CalendarViewModel(dataProvider: DataProviderImpl())
+        )
     }
 }

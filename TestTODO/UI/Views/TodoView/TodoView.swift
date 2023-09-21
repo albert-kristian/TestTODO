@@ -8,12 +8,12 @@
 import SwiftUI
 
 struct TodoView: View {
-    @StateObject private var viewModel: TodoViewModel = TodoViewModel()
-
+    @ObservedObject var viewModel: TodoViewModel
+    
     var body: some View {
         NavigationView {
             List {
-                ForEach(viewModel.dummyData, id: \.id) { item in
+                ForEach(viewModel.data, id: \.id) { item in
                     TodoItem(todoModel: item)
                         .onTapGesture {
                             viewModel.check(id: item.id)
@@ -32,6 +32,6 @@ struct TodoView: View {
 
 struct TodoView_Previews: PreviewProvider {
     static var previews: some View {
-        TodoView()
+        TodoView(viewModel: TodoViewModel(dataProvider: DataProviderImpl()))
     }
 }
