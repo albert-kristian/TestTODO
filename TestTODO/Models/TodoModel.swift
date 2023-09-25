@@ -7,7 +7,7 @@
 
 import Foundation
 
-protocol TodoModel: Identifiable {
+protocol TodoModel {
     var id: String { get set }
     var content: String { get set }
     var isChecked: Bool { get set }
@@ -15,7 +15,11 @@ protocol TodoModel: Identifiable {
 }
 
 extension TodoModel {
-    mutating func modify(content: String? = nil, isChecked: Bool? = nil, dateTime: Date? = nil) {
+    mutating func modify(
+        content: String? = nil,
+        isChecked: Bool? = nil,
+        dateTime: Date? = nil
+    ) {
         self.content = content ?? self.content
         self.isChecked = isChecked ?? self.isChecked
         self.dateTime = dateTime ?? self.dateTime
