@@ -9,20 +9,24 @@ import SwiftUI
 
 struct TodoView: View {
     @StateObject private var viewModel: TodoViewModel = TodoViewModel()
-    
+
     var body: some View {
-        List {
-            ForEach(viewModel.dummyData, id: \.id) { item in
-                TodoItem(todoModel: item)
-                    .onTapGesture {
-                        viewModel.check(id: item.id)
-                    }
-            }.onDelete(perform: { index in
-                viewModel.deleteAt(at: index)
-            })
+        NavigationView {
+            List {
+                ForEach(viewModel.dummyData, id: \.id) { item in
+                    TodoItem(todoModel: item)
+                        .onTapGesture {
+                            viewModel.check(id: item.id)
+                        }
+                }.onDelete(perform: { index in
+                    viewModel.deleteAt(at: index)
+                })
+            }
+            .listStyle(.plain)
+            .frame(maxWidth: .infinity)
+            .navigationTitle("Today")
+            .navigationBarTitleDisplayMode(.inline)
         }
-        .listStyle(.plain)
-        .frame(maxWidth: .infinity)
     }
 }
 

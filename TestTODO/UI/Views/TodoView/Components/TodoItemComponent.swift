@@ -9,7 +9,7 @@ import SwiftUI
 
 struct TodoItem: View {
     let todoModel: any TodoModel
-    
+
     var body: some View {
         HStack {
             Text(todoModel.content)
@@ -24,12 +24,12 @@ struct TodoItem: View {
 struct TodoItem_Previews: PreviewProvider {
     struct TodoPreviewHolder: View {
         @State var todoModel = RealmTodoModel(content: "Test")
-        
+
         var body: some View {
             TodoItem(todoModel: todoModel)
         }
     }
-    
+
     static var previews: some View {
         TodoPreviewHolder()
     }
