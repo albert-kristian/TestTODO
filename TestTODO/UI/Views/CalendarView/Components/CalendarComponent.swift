@@ -10,18 +10,18 @@ import SwiftUI
 struct CalendarComponent: View {
     @Binding var selectedDate: Date
     @Binding var selectedMonthIndex: Int
-    
+
     var selectedMonth: Date = Date()
     var dayItems: [DayItemModel]
-    
+
     let updateMonth: () -> Void
-    
+
     var body: some View {
-        VStack(spacing: 35) {
+        VStack(spacing: 8) {
             let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"]
-            
+
             HStack(spacing: 20) {
-                VStack(alignment: .leading, spacing: 10) {
+                VStack(alignment: .leading, spacing: 20) {
                     Text(selectedMonth.yearString())
                         .font(.caption)
                         .fontWeight(.semibold)
@@ -47,7 +47,7 @@ struct CalendarComponent: View {
                 }
             }
             .padding(.horizontal)
-            
+
             HStack(spacing: 0) {
                 ForEach(days, id: \.self) { day in
                     Text(day)
@@ -57,11 +57,11 @@ struct CalendarComponent: View {
                 }
             }
             let columns = Array(repeating: GridItem(.flexible()), count: 7)
-            
+
             LazyVGrid(columns: columns, spacing: 15) {
                 ForEach(dayItems) { dayItem in
                     let foregroundColor = selectedDate.isSameDay(with: dayItem.date) ? Color.white : Color.black
-                    
+
                     DayComponent(dayItem: dayItem, foregroundColor: foregroundColor)
                         .background(
                             Circle()
@@ -82,12 +82,12 @@ struct CalendarComponent: View {
 }
 
 struct CustomDatePicker_Previews: PreviewProvider {
-    
+
     struct Wrapper: View {
         @State private var currentDate = Date()
         @State private var currentMonth = 0
         @State private var dayItems = [DayItemModel]()
-        
+
         var body: some View {
             CalendarComponent(
                 selectedDate: $currentDate,
@@ -97,7 +97,7 @@ struct CustomDatePicker_Previews: PreviewProvider {
             )
         }
     }
-    
+
     static var previews: some View {
         Wrapper()
     }

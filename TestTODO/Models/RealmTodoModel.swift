@@ -6,10 +6,24 @@
 //
 
 import Foundation
+import RealmSwift
 
-struct RealmTodoModel: TodoModel {
-    var id: String = UUID().uuidString
-    var content: String
-    var isChecked: Bool = false
-    var dateTime: Date = Date()
+class RealmTodoModel: Object, TodoModel {
+    @Persisted(primaryKey: true) var id: String = UUID().uuidString
+    @Persisted var content: String
+    @Persisted var isChecked: Bool
+    @Persisted var dateTime: Date
+
+    convenience init(
+        id: String = UUID().uuidString,
+        content: String,
+        isChecked: Bool = false,
+        dateTime: Date = Date()
+    ) {
+        self.init()
+        self.id = id
+        self.content = content
+        self.isChecked = isChecked
+        self.dateTime = dateTime
+    }
 }

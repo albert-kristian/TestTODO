@@ -11,9 +11,9 @@ struct CheckBoxComponent: View {
     let isChecked: Bool
 
     var body: some View {
-            Image(systemName: isChecked ? "checkmark.circle.fill" : "circle")
-                .foregroundColor(isChecked ? Color(UIColor.systemBlue) : Color.secondary)
-        }
+        Image(systemName: isChecked ? "checkmark.circle.fill" : "circle")
+            .foregroundColor(isChecked ? Color(UIColor.systemBlue) : Color.secondary)
+    }
 }
 
 struct CheckBoxComponent_Previews: PreviewProvider {

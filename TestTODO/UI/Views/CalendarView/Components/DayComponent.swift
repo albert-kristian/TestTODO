@@ -10,7 +10,7 @@ import SwiftUI
 struct DayComponent: View {
     let dayItem: DayItemModel
     let foregroundColor: Color
-    
+
     var body: some View {
         VStack {
             if dayItem.day != -1 {
