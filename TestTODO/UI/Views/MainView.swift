@@ -7,34 +7,60 @@
 
 import SwiftUI
 
+enum CurrentTab {
+    case today
+    case calendar
+}
+
 struct MainView: View {
 
     @StateObject var dataProvider: DataProvider = DataProvider()
+    var calendarViewModel: CalendarViewModel {
+        return CalendarViewModel(dataProvider: dataProvider)
+    }
 
-    @State var selection: Int? = 0
+    @State var navigationSelection: Int? = 0
+    @State var currentTabSelection: CurrentTab = CurrentTab.today
+
+    private var preSelectedDate: Date {
+        if currentTabSelection == CurrentTab.today {
+            return Date()
+        } else {
+            return calendarViewModel.selectedDate
+        }
+    }
 
     var body: some View {
         NavigationView {
             ZStack(alignment: .bottom) {
-                NavigationLink(destination: EmptyView(), tag: 1, selection: $selection) {
+                NavigationLink(
+                    destination: AddTodoView(
+                        viewModel: AddTodoViewModel(
+                            preSelectedDate: preSelectedDate,
+                            dataProvider: dataProvider
+                        )
+                    ),
+                    tag: 1,
+                    selection: $navigationSelection
+                ) {
                     EmptyView()
                 }
 
-                TabView {
+                TabView(selection: $currentTabSelection) {
                     TodoView(
                         viewModel: TodoViewModel(dataProvider: dataProvider)
                     ).tabItem {
                         Label("Today", systemImage: "calendar.day.timeline.left")
-                    }
+                    }.tag(CurrentTab.today)
                     CalendarView(
-                        viewModel: CalendarViewModel(dataProvider: dataProvider)
+                        viewModel: calendarViewModel
                     ).tabItem {
                         Label("Calendar", systemImage: "calendar")
-                    }
+                    }.tag(CurrentTab.calendar)
                 }
                 AddItemButton(
                     onClick: {
-                        selection = 1
+                        navigationSelection = 1
                     }
                 )
             }
