@@ -28,4 +28,8 @@ class AddTodoViewModel: ObservableObject {
         let todo = RealmTodoModel(content: todoContent, isChecked: isChecked, dateTime: selectedDate)
         dataProvider.add(todo: todo)
     }
+
+    func check() {
+        isChecked = !isChecked
+    }
 }

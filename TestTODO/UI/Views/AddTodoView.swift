@@ -23,10 +23,11 @@ struct AddTodoView: View {
                         Text("Is checked")
                         Spacer()
                         CheckBoxComponent(isChecked: viewModel.isChecked)
-                            .onTapGesture {
-
-                            }
-                    }.frame(maxWidth: .infinity)
+                    }
+                    .frame(maxWidth: .infinity)
+                    .onTapGesture {
+                        viewModel.check()
+                    }
                     Spacer()
                     Button(
                         action: {

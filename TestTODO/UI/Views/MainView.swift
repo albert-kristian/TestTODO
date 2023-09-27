@@ -31,7 +31,7 @@ struct MainView: View {
     }
 
     var body: some View {
-        NavigationView {
+        NavigationStack {
             ZStack(alignment: .bottom) {
                 NavigationLink(
                     destination: AddTodoView(
