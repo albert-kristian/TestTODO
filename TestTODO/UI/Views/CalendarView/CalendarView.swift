@@ -9,20 +9,33 @@ import SwiftUI
 
 struct CalendarView: View {
     @ObservedObject var viewModel: CalendarViewModel
-    
+
     var body: some View {
-        VStack {
-            CalendarComponent(
-                selectedDate: $viewModel.selectedDate,
-                selectedMonthIndex: $viewModel.selectedMonthIndex,
-                selectedMonth: viewModel.selectedMonth,
-                dayItems: viewModel.dayModels,
-                updateMonth: {
-                    viewModel.updateMonth()
-                }
-            )
-            Spacer() // Fixme: remove
-            // TODO: Show the list of todos for the selected day
+        NavigationView {
+            VStack {
+                CalendarComponent(
+                    selectedDate: $viewModel.selectedDate,
+                    selectedMonthIndex: $viewModel.selectedMonthIndex,
+                    selectedMonth: viewModel.selectedMonth,
+                    dayItems: viewModel.dayModels,
+                    updateMonth: {
+                        viewModel.updateMonth()
+                    }
+                )
+                Divider()
+                TodosListComponent(
+                    todos: viewModel.todos,
+                    onCheck: { id in
+                        viewModel.check(id: id)
+                    },
+                    onDelete: { indexSet in
+                        viewModel.deleteAt(indexSet: indexSet)
+                    }
+                )
+            }
+            .padding()
+            .navigationTitle("Calendar")
+            .navigationBarTitleDisplayMode(.inline)
         }
     }
 }
@@ -30,7 +43,7 @@ struct CalendarView: View {
 struct CalendarView_Previews: PreviewProvider {
     static var previews: some View {
         CalendarView(
-            viewModel: CalendarViewModel(dataProvider: DataProviderImpl())
+            viewModel: CalendarViewModel(dataProvider: DataProvider())
         )
     }
 }

@@ -8,22 +8,28 @@
 import SwiftUI
 
 struct MainView: View {
-    
-    @StateObject var dataProvider: DataProvider = DataProviderImpl()
-    
+
+    @StateObject var dataProvider: DataProvider = DataProvider()
+
     var body: some View {
         ZStack(alignment: .bottom) {
             TabView {
-                TodoView(viewModel: TodoViewModel(dataProvider: dataProvider)).tabItem {
+                TodoView(
+                    viewModel: TodoViewModel(dataProvider: dataProvider)
+                ).tabItem {
                     Label("Today", systemImage: "calendar.day.timeline.left")
                 }
-                CalendarView(viewModel: CalendarViewModel(dataProvider: dataProvider)).tabItem {
+                CalendarView(
+                    viewModel: CalendarViewModel(dataProvider: dataProvider)
+                ).tabItem {
                     Label("Calendar", systemImage: "calendar")
                 }
             }
-            AddItemButton(onClick: {
-                // TODO: Implement navigation to AddItemScreen
-            })
+            AddItemButton(
+                onClick: {
+                    // TODO: Implement navigation to AddItemScreen
+                }
+            )
         }
     }
 }

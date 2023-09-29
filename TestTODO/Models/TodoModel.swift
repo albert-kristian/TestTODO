@@ -13,15 +13,3 @@ protocol TodoModel {
     var isChecked: Bool { get set }
     var dateTime: Date { get set }
 }
-
-extension TodoModel {
-    mutating func modify(
-        content: String? = nil,
-        isChecked: Bool? = nil,
-        dateTime: Date? = nil
-    ) {
-        self.content = content ?? self.content
-        self.isChecked = isChecked ?? self.isChecked
-        self.dateTime = dateTime ?? self.dateTime
-    }
-}

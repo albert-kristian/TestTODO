@@ -9,21 +9,18 @@ import SwiftUI
 
 struct TodoView: View {
     @ObservedObject var viewModel: TodoViewModel
-    
+
     var body: some View {
         NavigationView {
-            List {
-                ForEach(viewModel.data, id: \.id) { item in
-                    TodoItem(todoModel: item)
-                        .onTapGesture {
-                            viewModel.check(id: item.id)
-                        }
-                }.onDelete(perform: { index in
-                    viewModel.deleteAt(at: index)
-                })
-            }
-            .listStyle(.plain)
-            .frame(maxWidth: .infinity)
+            TodosListComponent(
+                todos: viewModel.todos,
+                onCheck: { id in
+                    viewModel.check(id: id)
+                },
+                onDelete: { indexSet in
+                    viewModel.deleteAt(at: indexSet)
+                }
+            )
             .navigationTitle("Today")
             .navigationBarTitleDisplayMode(.inline)
         }
@@ -32,6 +29,6 @@ struct TodoView: View {
 
 struct TodoView_Previews: PreviewProvider {
     static var previews: some View {
-        TodoView(viewModel: TodoViewModel(dataProvider: DataProviderImpl()))
+        TodoView(viewModel: TodoViewModel(dataProvider: DataProvider()))
     }
 }
