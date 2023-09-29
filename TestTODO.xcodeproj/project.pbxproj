@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		421693A32AC3653B002D77FE /* AddTodoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 421693A22AC3653B002D77FE /* AddTodoView.swift */; };
 		421693A52AC36DDA002D77FE /* AddTodoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 421693A42AC36DDA002D77FE /* AddTodoViewModel.swift */; };
+		421693A72AC78FBB002D77FE /* SelectedDayHolder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 421693A62AC78FBB002D77FE /* SelectedDayHolder.swift */; };
 		4218F3C02AA3506700A24124 /* AddItemButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4218F3BF2AA3506700A24124 /* AddItemButton.swift */; };
 		4218F3C42AA38E1100A24124 /* RealmTodoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4218F3C32AA38E1100A24124 /* RealmTodoModel.swift */; };
 		4218F3C72AA38E8A00A24124 /* TodoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4218F3C62AA38E8A00A24124 /* TodoModel.swift */; };
@@ -43,6 +44,7 @@
 /* Begin PBXFileReference section */
 		421693A22AC3653B002D77FE /* AddTodoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTodoView.swift; sourceTree = "<group>"; };
 		421693A42AC36DDA002D77FE /* AddTodoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTodoViewModel.swift; sourceTree = "<group>"; };
+		421693A62AC78FBB002D77FE /* SelectedDayHolder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedDayHolder.swift; sourceTree = "<group>"; };
 		4218F3BF2AA3506700A24124 /* AddItemButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddItemButton.swift; sourceTree = "<group>"; };
 		4218F3C32AA38E1100A24124 /* RealmTodoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmTodoModel.swift; sourceTree = "<group>"; };
 		4218F3C62AA38E8A00A24124 /* TodoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoModel.swift; sourceTree = "<group>"; };
@@ -200,6 +202,7 @@
 			isa = PBXGroup;
 			children = (
 				4265BB012ABE52230061EFDB /* TypedPublisherHandler.swift */,
+				421693A62AC78FBB002D77FE /* SelectedDayHolder.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -379,6 +382,7 @@
 				42619A4E2AC1B2D500A52050 /* TodoProperties.swift in Sources */,
 				4218F3C72AA38E8A00A24124 /* TodoModel.swift in Sources */,
 				4258A8BE2A9F85B600A77983 /* TestTodoApp.swift in Sources */,
+				421693A72AC78FBB002D77FE /* SelectedDayHolder.swift in Sources */,
 				4265BB022ABE52230061EFDB /* TypedPublisherHandler.swift in Sources */,
 				429D96302AB6158E0063C107 /* CalendarComponent.swift in Sources */,
 				429D96352AB7465C0063C107 /* DateExtensions.swift in Sources */,

@@ -10,12 +10,22 @@ import SwiftUI
 struct AddTodoView: View {
     @ObservedObject var viewModel: AddTodoViewModel
 
+    private var dateComponent: DateComponents {
+        var component = DateComponents()
+        component.year = 5
+        return component
+    }
+
     var body: some View {
         NavigationView {
             ZStack(alignment: .center) {
                 VStack(alignment: .center, spacing: 24) {
                     Spacer()
-                    DatePicker(selection: $viewModel.selectedDate, in: ...Date(), displayedComponents: .date) {
+                    DatePicker(
+                        selection: $viewModel.selectedDate,
+                        in: ...(Calendar.current.date(byAdding: dateComponent, to: Date()) ?? Date()),
+                        displayedComponents: .date
+                    ) {
                         Text("Select Date")
                     }
                     TextField("Name", text: $viewModel.todoContent)
@@ -23,10 +33,11 @@ struct AddTodoView: View {
                         Text("Is checked")
                         Spacer()
                         CheckBoxComponent(isChecked: viewModel.isChecked)
-                            .onTapGesture {
-
-                            }
-                    }.frame(maxWidth: .infinity)
+                    }
+                    .frame(maxWidth: .infinity)
+                    .onTapGesture {
+                        viewModel.check()
+                    }
                     Spacer()
                     Button(
                         action: {
@@ -50,7 +61,6 @@ struct AddTodoView_Previews: PreviewProvider {
     static var previews: some View {
         AddTodoView(
             viewModel: AddTodoViewModel(
-                preSelectedDate: Date(),
                 dataProvider: DataProvider(dataService: RealmService())
             )
         )

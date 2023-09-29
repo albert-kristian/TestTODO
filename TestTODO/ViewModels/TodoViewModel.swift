@@ -32,5 +32,6 @@ import Foundation
 
     func check(id: String) {
         dataProvider.check(id: id)
+        objectWillChange.send()
     }
 }

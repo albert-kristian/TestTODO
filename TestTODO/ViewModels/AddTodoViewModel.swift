@@ -14,9 +14,13 @@ class AddTodoViewModel: ObservableObject {
 
     private let dataProvider: DataProvider
 
-    init(preSelectedDate: Date, dataProvider: DataProvider) {
-        selectedDate = preSelectedDate
+    init(dataProvider: DataProvider) {
+        selectedDate = SelectedDayHolder.instance.selectedDay
         self.dataProvider = dataProvider
+    }
+
+    func check() {
+        isChecked = !isChecked
     }
 
     func save() {
@@ -27,5 +31,6 @@ class AddTodoViewModel: ObservableObject {
         }
         let todo = RealmTodoModel(content: todoContent, isChecked: isChecked, dateTime: selectedDate)
         dataProvider.add(todo: todo)
+        objectWillChange.send()
     }
 }

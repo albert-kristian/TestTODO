@@ -30,8 +30,8 @@ import SwiftUI
 
     init(dataProvider: DataProvider) {
         self.dataProvider = dataProvider
-        self.selectedDate = Date()
-        
+        self.selectedDate = SelectedDayHolder.instance.selectedDay
+
         updateMonth()
         getTodosForTheSelectedDay()
     }
@@ -56,6 +56,7 @@ import SwiftUI
     func check(id: String) {
         dataProvider.check(id: id)
         getTodosForTheSelectedDay()
+        dayModels = getDates()
     }
 
     func deleteAt(indexSet: IndexSet) {

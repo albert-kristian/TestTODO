@@ -71,6 +71,7 @@ struct CalendarComponent: View {
                         )
                         .onTapGesture {
                             selectedDate = dayItem.date
+                            SelectedDayHolder.instance.updateSelectedDay(to: selectedDate)
                         }
                 }
             }

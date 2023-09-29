@@ -22,24 +22,11 @@ struct MainView: View {
     @State var navigationSelection: Int? = 0
     @State var currentTabSelection: CurrentTab = CurrentTab.today
 
-    private var preSelectedDate: Date {
-        if currentTabSelection == CurrentTab.today {
-            return Date()
-        } else {
-            return calendarViewModel.selectedDate
-        }
-    }
-
     var body: some View {
         NavigationView {
             ZStack(alignment: .bottom) {
                 NavigationLink(
-                    destination: AddTodoView(
-                        viewModel: AddTodoViewModel(
-                            preSelectedDate: preSelectedDate,
-                            dataProvider: dataProvider
-                        )
-                    ),
+                    destination: AddTodoView(viewModel: AddTodoViewModel(dataProvider: dataProvider)),
                     tag: 1,
                     selection: $navigationSelection
                 ) {
@@ -49,14 +36,21 @@ struct MainView: View {
                 TabView(selection: $currentTabSelection) {
                     TodoView(
                         viewModel: TodoViewModel(dataProvider: dataProvider)
-                    ).tabItem {
+                    )
+                    .tabItem {
                         Label("Today", systemImage: "calendar.day.timeline.left")
-                    }.tag(CurrentTab.today)
+                    }
+                    .tag(CurrentTab.today)
+                    .onAppear {
+                        SelectedDayHolder.instance.updateSelectedDay(to: Date())
+                    }
                     CalendarView(
                         viewModel: calendarViewModel
-                    ).tabItem {
+                    )
+                    .tabItem {
                         Label("Calendar", systemImage: "calendar")
-                    }.tag(CurrentTab.calendar)
+                    }
+                    .tag(CurrentTab.calendar)
                 }
                 AddItemButton(
                     onClick: {
