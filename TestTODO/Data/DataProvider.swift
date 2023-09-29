@@ -9,7 +9,7 @@ import Foundation
 import Combine
 
 class DataProvider: ObservableObject {
-    @Published var todoItems: [TodoModel] = [TodoModel]()
+    var todoItems: [TodoModel] = [TodoModel]()
 
     private var dataService: DataService
     private var cancellables: [Cancellable] = []
@@ -27,17 +27,16 @@ class DataProvider: ObservableObject {
             case Service.coreData:
                 dataService = CoreDataService()
         }
+
         fetchData()
     }
 
     func add(todo: TodoModel) {
-        let cancellable = TypedPublisherHandler().handlePublisher(
-            publisher: dataService.add(todo: todo),
-            completion: {
-                print("Added")
-                self.fetchData()
-            }
-        )
+        let cancellable = dataService.add(todo: todo).handlePublisher {
+            print("Added")
+            self.fetchData()
+        }
+
         cancellables.append(cancellable)
     }
 
@@ -47,39 +46,33 @@ class DataProvider: ObservableObject {
             return
         }
 
-        let cancellable = TypedPublisherHandler().handlePublisher(
-            publisher: dataService.edit(
-                itemId: todoItems[index].id,
-                content: nil,
-                isChecked: !todoItems[index].isChecked,
-                dateTime: nil
-            ),
-            completion: {
-                print("Edited")
-                self.fetchData()
-            }
-        )
+        let cancellable = dataService.edit(
+            itemId: todoItems[index].id,
+            content: nil,
+            isChecked: !todoItems[index].isChecked,
+            dateTime: nil
+        ).handlePublisher {
+            print("Edited")
+            self.fetchData()
+        }
+
         cancellables.append(cancellable)
     }
 
     func delete(todo: TodoModel) {
-        let cancellable = TypedPublisherHandler().handlePublisher(
-            publisher: dataService.delete(todo: todo),
-            completion: {
-                print("Deleted")
-                self.fetchData()
-            }
-        )
+        let cancellable = dataService.delete(todo: todo).handlePublisher {
+            print("Deleted")
+            self.fetchData()
+        }
+
         cancellables.append(cancellable)
     }
 
     func fetchData() {
-        let cancellable = TypedPublisherHandler().handlePublisher(
-            publisher: dataService.fetchData(),
-            completion: { todos in
-                self.todoItems = todos
-            }
-        )
+        let cancellable = dataService.fetchData().handlePublisher { todos in
+            self.todoItems = todos
+        }
+
         cancellables.append(cancellable)
     }
 

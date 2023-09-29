@@ -7,29 +7,57 @@
 
 import SwiftUI
 
+enum CurrentTab {
+    case today
+    case calendar
+}
+
 struct MainView: View {
 
     @StateObject var dataProvider: DataProvider = DataProvider()
+    var calendarViewModel: CalendarViewModel {
+        return CalendarViewModel(dataProvider: dataProvider)
+    }
+
+    @State var navigationSelection: Int? = 0
+    @State var currentTabSelection: CurrentTab = CurrentTab.today
 
     var body: some View {
-        ZStack(alignment: .bottom) {
-            TabView {
-                TodoView(
-                    viewModel: TodoViewModel(dataProvider: dataProvider)
-                ).tabItem {
-                    Label("Today", systemImage: "calendar.day.timeline.left")
+        NavigationView {
+            ZStack(alignment: .bottom) {
+                NavigationLink(
+                    destination: AddTodoView(viewModel: AddTodoViewModel(dataProvider: dataProvider)),
+                    tag: 1,
+                    selection: $navigationSelection
+                ) {
+                    EmptyView()
                 }
-                CalendarView(
-                    viewModel: CalendarViewModel(dataProvider: dataProvider)
-                ).tabItem {
-                    Label("Calendar", systemImage: "calendar")
+
+                TabView(selection: $currentTabSelection) {
+                    TodoView(
+                        viewModel: TodoViewModel(dataProvider: dataProvider)
+                    )
+                    .tabItem {
+                        Label("Today", systemImage: "calendar.day.timeline.left")
+                    }
+                    .tag(CurrentTab.today)
+                    .onAppear {
+                        SelectedDayHolder.instance.updateSelectedDay(to: Date())
+                    }
+                    CalendarView(
+                        viewModel: calendarViewModel
+                    )
+                    .tabItem {
+                        Label("Calendar", systemImage: "calendar")
+                    }
+                    .tag(CurrentTab.calendar)
                 }
+                AddItemButton(
+                    onClick: {
+                        navigationSelection = 1
+                    }
+                )
             }
-            AddItemButton(
-                onClick: {
-                    // TODO: Implement navigation to AddItemScreen
-                }
-            )
         }
     }
 }

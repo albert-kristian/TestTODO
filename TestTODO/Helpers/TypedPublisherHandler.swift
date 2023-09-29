@@ -26,3 +26,19 @@ struct TypedPublisherHandler<T> {
         }
     }
 }
+
+// Better way of TypedPublisherHandler implementation
+extension AnyPublisher {
+    func handlePublisher(completion: @escaping (Self.Output) -> Void) -> Cancellable {
+        return sink { completion in
+            switch completion {
+                case .finished:
+                    break
+                case .failure(let error):
+                    print("Error: \(error)")
+            }
+        } receiveValue: { value in
+            completion(value)
+        }
+    }
+}
